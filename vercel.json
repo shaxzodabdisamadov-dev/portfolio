@@ -3,11 +3,10 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "framework": "nextjs",
-  "env": [
-    {
-      "key": "NEXT_PUBLIC_SITE_URL",
+  "env": {
+    "NEXT_PUBLIC_SITE_URL": {
       "description": "The URL of your portfolio website",
       "example": "https://yourname.com"
     }
-  ]
+  }
 }
