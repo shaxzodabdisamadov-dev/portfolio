@@ -75,7 +75,7 @@ export function Contact() {
             </h2>
             <div className="w-16 h-1 bg-gradient-to-r from-cyan-primary to-cyan-primary/20 mx-auto" />
             <p className="text-dark-muted/80 text-base sm:text-lg max-w-xl mx-auto">
-              Have a project in mind or want to collaborate? Reach out and let's create something great together.
+              Have a project in mind or want to collaborate? Reach out and let&apos;s create something great together.
             </p>
           </motion.div>
 
@@ -203,7 +203,7 @@ export function Contact() {
                   exit={{ opacity: 0, y: -10 }}
                   className="p-3 rounded-sm bg-cyan-primary/10 border border-cyan-primary/50 text-cyan-light text-sm font-medium text-center"
                 >
-                  ✓ Message received! I'll get back to you soon.
+                  ✓ Message received! I&apos;ll get back to you soon.
                 </motion.div>
               )}
             </motion.form>
