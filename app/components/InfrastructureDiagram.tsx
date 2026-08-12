@@ -1,15 +1,18 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 
 export function InfrastructureDiagram() {
+  const t = useTranslations('infrastructureDiagram')
+
   const layers = [
-    { label: 'USER', icon: '👤', color: 'from-cyan-primary' },
-    { label: 'NETWORK', icon: '🌐', color: 'from-violet-primary' },
-    { label: 'FIREWALL', icon: '🔒', color: 'from-cyan-primary' },
-    { label: 'SERVER', icon: '🖥️', color: 'from-violet-primary' },
-    { label: 'APPLICATION', icon: '📱', color: 'from-cyan-primary' },
-    { label: 'MONITORING', icon: '📊', color: 'from-violet-primary' },
+    { label: t('user'), icon: '👤', color: 'from-cyan-primary' },
+    { label: t('network'), icon: '🌐', color: 'from-violet-primary' },
+    { label: t('firewall'), icon: '🔒', color: 'from-cyan-primary' },
+    { label: t('server'), icon: '🖥️', color: 'from-violet-primary' },
+    { label: t('application'), icon: '📱', color: 'from-cyan-primary' },
+    { label: t('monitoring'), icon: '📊', color: 'from-violet-primary' },
   ]
 
   const containerVariants = {
@@ -45,7 +48,7 @@ export function InfrastructureDiagram() {
           <motion.div variants={itemVariants} className="space-y-4">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
               <span className="bg-gradient-to-r from-cyan-primary to-violet-primary bg-clip-text text-transparent">
-                Infrastructure Stack
+                {t('title')}
               </span>
             </h2>
             <div className="w-16 h-1 bg-gradient-to-r from-cyan-primary to-cyan-primary/20" />
@@ -86,8 +89,7 @@ export function InfrastructureDiagram() {
             className="max-w-2xl mx-auto p-6 rounded-sm border border-cyan-primary/20 bg-dark-card/30 backdrop-blur-sm"
           >
             <p className="text-sm sm:text-base text-dark-muted/90 text-center leading-relaxed">
-              This represents a conceptual infrastructure stack demonstrating the flow from end-user through
-              network security, server infrastructure, application layer, to monitoring and observability.
+              {t('description')}
             </p>
           </motion.div>
         </motion.div>

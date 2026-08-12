@@ -1,9 +1,12 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 import { portfolioData } from '@/app/data/portfolio'
 
 export function About() {
+  const t = useTranslations('about')
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -37,7 +40,7 @@ export function About() {
           <motion.div variants={itemVariants} className="space-y-4">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
               <span className="bg-gradient-to-r from-cyan-primary to-violet-primary bg-clip-text text-transparent">
-                About
+                {t('title')}
               </span>
             </h2>
             <div className="w-16 h-1 bg-gradient-to-r from-cyan-primary to-cyan-primary/20" />
@@ -48,10 +51,10 @@ export function About() {
             {/* Main Text */}
             <div className="md:col-span-2 space-y-6">
               <h3 className="text-xl sm:text-2xl font-semibold text-cyan-light">
-                {portfolioData.about.headline}
+                {t('headline')}
               </h3>
               <div className="space-y-4 text-dark-muted/90 leading-relaxed">
-                {portfolioData.about.description.split('\n\n').map((paragraph, index) => (
+                {t('description').split('\n\n').map((paragraph: string, index: number) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </div>
@@ -67,15 +70,15 @@ export function About() {
                   <p className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-cyan-primary to-cyan-light bg-clip-text text-transparent">
                     {portfolioData.personal.experience}
                   </p>
-                  <p className="text-sm text-dark-muted/70 mt-2">Years of Experience</p>
+                  <p className="text-sm text-dark-muted/70 mt-2">{t('experience')}</p>
                 </div>
                 <div className="pt-6 border-t border-dark-border">
-                  <p className="text-sm font-mono text-cyan-primary/70 mb-2">Education</p>
+                  <p className="text-sm font-mono text-cyan-primary/70 mb-2">{t('education')}</p>
                   <p className="text-sm font-semibold text-dark-text">
-                    {portfolioData.about.education.university}
+                    {t('university')}
                   </p>
                   <p className="text-xs text-dark-muted/70 mt-1">
-                    {portfolioData.about.education.degree}
+                    {t('degree')}
                   </p>
                 </div>
               </div>

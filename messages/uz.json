@@ -1,0 +1,109 @@
+{
+  "nav": {
+    "home": "Asosiy",
+    "about": "Men haqimda",
+    "experience": "Tajriba",
+    "skills": "Koʻnikma",
+    "projects": "Loyihalar",
+    "education": "Ta'lim",
+    "contact": "Aloqa"
+  },
+  "hero": {
+    "status": "Holati: Ishlaydi",
+    "name": "Shaxzod Abdisamadov",
+    "title": "DevOps va IT Infratuzilma Mutaxassisi",
+    "bio": "Ishonchli infratuzilma, xavfsiz tarmoqlar va kengaytirilishi mumkin bo'lgan texnik muhitlarni yaratish.",
+    "viewExperience": "Tajribani ko'rish",
+    "contactMe": "Menga bog'lanish",
+    "scrollExplore": "Ko'proq ko'rish uchun aylantiring"
+  },
+  "systemStatus": {
+    "title": "Tizim Holati",
+    "infrastructure": "Infratuzilma",
+    "network": "Tarmoq",
+    "security": "Xavfsizlik",
+    "monitoring": "Monitoring",
+    "containers": "Kontejnerlar",
+    "systems": "Tizimlar",
+    "operational": "ishlaydi",
+    "online": "onlayn",
+    "protected": "himoyalangan",
+    "active": "faol",
+    "ready": "tayyor",
+    "stable": "barqaror",
+    "version": "v1.0"
+  },
+  "about": {
+    "title": "Men haqimda",
+    "headline": "Men 4+ yillik tajribaga ega DevOps va IT Infratuzilma mutaxassisi sifatida mustahkam texnik muhitlarni loyihalash, amalga oshirish va saqlashda ishlayman.",
+    "description": "Infratuzilma boshqarishi, tarmoq va server administratsiyasida kuchli asosga ega bo'lib, men quyidagica ixtisoslashganman:\n\n• Infratuzilmani loyihalash va joylashtirish\n• Tarmoq dizayni va xavfsizligi\n• Server administratsiyasi (Linux va Windows)\n• Virtualizatsiya va kontejnerizatsiya\n• Monitoring va tizim ishonchiligi\n• Firewall konfiguratsiyasi va tarmoq xavfsizligi\n\nMening yondashuvim ishonchli, xavfsiz va kengaytirilishi mumkin bo'lgan tizimlarni yaratishga qaratilgan. Men bir nechta infratuzilma texnologiyalari bilan ishlagandirman va DevOps'da doimiy o'rganishga va eng yaxshi amaliyotlarga sadoqatli qolamman.",
+    "experience": "Yillik tajriba",
+    "education": "Ta'lim",
+    "university": "Tashkent Axborot Texnologiyalari Universiteti",
+    "degree": "Telekommunikatsiya texnologiyalari"
+  },
+  "experience": {
+    "title": "Tajriba",
+    "position": "Rahbar Maslahatchi",
+    "company": "Tashkent Shahar Statistika Boshqarmasi",
+    "period": "4+ yil",
+    "description": "Infratuzilma nazorati va texnik maslahat. IT infratuzilma qarorlarini, server administratsiyasini, tarmoq boshqaruvini va tizim ishonchiligi uchun mas'ul."
+  },
+  "skills": {
+    "title": "Texnik Arsenal",
+    "infrastructure": "Infratuzilma",
+    "networking": "Tarmoqlar",
+    "devops": "DevOps",
+    "other": "Boshqa"
+  },
+  "infrastructureDiagram": {
+    "title": "Infratuzilma Yigʻindisi",
+    "user": "Foydalanuvchi",
+    "network": "Tarmoq",
+    "firewall": "Firewall",
+    "server": "Server",
+    "application": "Ilova",
+    "monitoring": "Monitoring",
+    "description": "Bu kontseptual infratuzilma yigʻindisini ifodalaydi, u oxiri foydalanuvchidan tarmoq xavfsizligi, server infratuzilmasi, ilova qatlamiga va monitoring hamda kuzatish imkoniyatlariga oʻtadi."
+  },
+  "projects": {
+    "title": "Loyihalar va Operatsiyalar",
+    "infrastructureProjects": "Infratuzilma Loyihalari",
+    "projectDescription": "Infratuzilma va tizim loyihalarining tanlangan misollar shu yerda ko'rsatiladi. Infratuzilmani loyihalash, tarmoq joylashtirish va tizim optimizatsiyasini ko'rsatuvchi loyihalar.",
+    "status": "Rivojlantirilmoqda",
+    "detailsComingSoon": "Tafsilotlar tez orada",
+    "comingSoonTitle": "Loyihalar Tez Orada",
+    "comingSoonDescription": "Infratuzilma va tizim loyihalarini ko'rsatuvchi infratuzilma dizayni, tarmoq joylashtirish va tizim optimizatsiyasi shu yerga qo'shiladi."
+  },
+  "education": {
+    "title": "Ta'lim",
+    "university": "Tashkent Axborot Texnologiyalari Universiteti",
+    "degree": "Telekommunikatsiya texnologiyalari",
+    "fieldOfStudy": "O'rganish sohasi",
+    "focusAreas": "Asosiy yo'nalishlar"
+  },
+  "contact": {
+    "title": "Menimga Bog'lanish",
+    "subtitle": "Loyihangiz bormi yoki hamkorlik qilmoqchimisiz? Menimga bog'lanin va birgalikda buyuk narsalarni yarataylik.",
+    "name": "Ism",
+    "email": "Email",
+    "telegram": "Telegram",
+    "github": "GitHub",
+    "message": "Xabar",
+    "namePlaceholder": "Sizning ismingiz",
+    "emailPlaceholder": "sizning@email.com",
+    "messagePlaceholder": "Sizning xabaringiz...",
+    "sendButton": "Xabar Yuborish",
+    "sending": "Yuborilmoqda...",
+    "successMessage": "Xabar olingan! Men tez orada siz bilan bog'lanamiz.",
+    "note": "Tezroq javob olish uchun email yoki Telegram orqali bog'lanib qoling."
+  },
+  "footer": {
+    "brand": "DevOps va IT Infratuzilma Mutaxassisi",
+    "navigation": "Navigatsiya",
+    "more": "Koʻproq",
+    "social": "Ijtimoiy",
+    "copyright": "Barcha huquqlar himoyalangan.",
+    "builtWith": "Next.js bilan yaratilgan"
+  }
+}

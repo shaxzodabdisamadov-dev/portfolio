@@ -1,10 +1,14 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useTranslations, useLocale } from 'next-intl'
 import { systemStatusItems, portfolioData } from '@/app/data/portfolio'
 import { SystemStatus } from '@/app/components/SystemStatus'
 
 export function Hero() {
+  const t = useTranslations('hero')
+  const locale = useLocale()
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -57,7 +61,7 @@ export function Hero() {
                 variants={itemVariants}
                 className="text-cyan-primary font-mono text-xs sm:text-sm uppercase tracking-widest"
               >
-                ● Status: Operational
+                ● {t('status')}
               </motion.p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
                 <span className="bg-gradient-to-r from-cyan-primary via-cyan-light to-violet-primary bg-clip-text text-transparent">
@@ -68,10 +72,10 @@ export function Hero() {
 
             <motion.div variants={itemVariants} className="space-y-2">
               <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-dark-muted">
-                {portfolioData.personal.title}
+                {t('title')}
               </h2>
               <p className="text-dark-muted/80 text-base sm:text-lg leading-relaxed">
-                {portfolioData.personal.bio}
+                {t('bio')}
               </p>
             </motion.div>
 
@@ -81,13 +85,13 @@ export function Hero() {
                 onClick={() => scrollToSection('experience')}
                 className="px-6 sm:px-8 py-3 bg-gradient-to-r from-cyan-primary to-cyan-light text-dark-bg font-semibold rounded-sm hover:shadow-lg hover:shadow-cyan-primary/50 transition-all duration-300 text-sm sm:text-base"
               >
-                View Experience
+                {t('viewExperience')}
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
                 className="px-6 sm:px-8 py-3 border border-cyan-primary text-cyan-primary font-semibold rounded-sm hover:bg-cyan-primary/10 transition-all duration-300 text-sm sm:text-base"
               >
-                Contact Me
+                {t('contactMe')}
               </button>
             </motion.div>
 
@@ -139,7 +143,7 @@ export function Hero() {
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
         <div className="flex flex-col items-center gap-2 text-cyan-primary/50">
-          <span className="text-xs font-mono">Scroll to explore</span>
+          <span className="text-xs font-mono">{t('scrollExplore')}</span>
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>

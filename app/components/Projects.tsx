@@ -1,9 +1,12 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 import { portfolioData } from '@/app/data/portfolio'
 
 export function Projects() {
+  const t = useTranslations('projects')
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -37,7 +40,7 @@ export function Projects() {
           <motion.div variants={itemVariants} className="space-y-4">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
               <span className="bg-gradient-to-r from-cyan-primary to-violet-primary bg-clip-text text-transparent">
-                Projects & Operations
+                {t('title')}
               </span>
             </h2>
             <div className="w-16 h-1 bg-gradient-to-r from-cyan-primary to-cyan-primary/20" />
@@ -67,7 +70,7 @@ export function Projects() {
                   {/* Footer */}
                   <div className="pt-4 border-t border-dark-border">
                     <p className="text-xs font-mono text-dark-muted/50">
-                      Details coming soon
+                      {t('detailsComingSoon')}
                     </p>
                   </div>
                 </div>
@@ -83,10 +86,9 @@ export function Projects() {
             <div className="flex items-start gap-3">
               <span className="text-2xl">📋</span>
               <div>
-                <p className="font-semibold text-cyan-light mb-2">Projects Coming Soon</p>
+                <p className="font-semibold text-cyan-light mb-2">{t('comingSoonTitle')}</p>
                 <p className="text-sm text-dark-muted/80">
-                  Detailed infrastructure and systems projects demonstrating infrastructure design, network
-                  implementation, and system optimization will be added here.
+                  {t('comingSoonDescription')}
                 </p>
               </div>
             </div>

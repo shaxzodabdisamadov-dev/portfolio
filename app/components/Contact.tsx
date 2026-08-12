@@ -2,9 +2,11 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 import { portfolioData } from '@/app/data/portfolio'
 
 export function Contact() {
+  const t = useTranslations('contact')
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -70,12 +72,12 @@ export function Contact() {
           <motion.div variants={itemVariants} className="space-y-4 text-center">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
               <span className="bg-gradient-to-r from-cyan-primary to-violet-primary bg-clip-text text-transparent">
-                Get In Touch
+                {t('title')}
               </span>
             </h2>
             <div className="w-16 h-1 bg-gradient-to-r from-cyan-primary to-cyan-primary/20 mx-auto" />
             <p className="text-dark-muted/80 text-base sm:text-lg max-w-xl mx-auto">
-              Have a project in mind or want to collaborate? Reach out and let&apos;s create something great together.
+              {t('subtitle')}
             </p>
           </motion.div>
 
@@ -89,7 +91,7 @@ export function Contact() {
                 className="block p-4 rounded-sm border border-dark-border bg-dark-card/50 hover:border-cyan-primary/50 transition-colors"
               >
                 <p className="text-xs font-mono uppercase tracking-widest text-dark-muted/50 mb-2">
-                  Email
+                  {t('email')}
                 </p>
                 <p className="text-sm font-semibold text-cyan-light hover:text-cyan-primary transition-colors">
                   {portfolioData.personal.email}
@@ -104,7 +106,7 @@ export function Contact() {
                 className="block p-4 rounded-sm border border-dark-border bg-dark-card/50 hover:border-cyan-primary/50 transition-colors"
               >
                 <p className="text-xs font-mono uppercase tracking-widest text-dark-muted/50 mb-2">
-                  Telegram
+                  {t('telegram')}
                 </p>
                 <p className="text-sm font-semibold text-cyan-light hover:text-cyan-primary transition-colors">
                   {portfolioData.personal.telegram}
@@ -119,7 +121,7 @@ export function Contact() {
                 className="block p-4 rounded-sm border border-dark-border bg-dark-card/50 hover:border-cyan-primary/50 transition-colors"
               >
                 <p className="text-xs font-mono uppercase tracking-widest text-dark-muted/50 mb-2">
-                  GitHub
+                  {t('github')}
                 </p>
                 <p className="text-sm font-semibold text-cyan-light hover:text-cyan-primary transition-colors">
                   {portfolioData.personal.github}
@@ -136,7 +138,7 @@ export function Contact() {
               {/* Name */}
               <div>
                 <label htmlFor="name" className="text-xs font-mono uppercase tracking-widest text-dark-muted/50">
-                  Name
+                  {t('name')}
                 </label>
                 <input
                   type="text"
@@ -146,14 +148,14 @@ export function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full mt-2 px-4 py-3 rounded-sm border border-dark-border bg-dark-card/50 text-dark-text placeholder-dark-muted/30 focus:border-cyan-primary focus:outline-none transition-colors"
-                  placeholder="Your name"
+                  placeholder={t('namePlaceholder')}
                 />
               </div>
 
               {/* Email */}
               <div>
                 <label htmlFor="email" className="text-xs font-mono uppercase tracking-widest text-dark-muted/50">
-                  Email
+                  {t('email')}
                 </label>
                 <input
                   type="email"
@@ -163,14 +165,14 @@ export function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full mt-2 px-4 py-3 rounded-sm border border-dark-border bg-dark-card/50 text-dark-text placeholder-dark-muted/30 focus:border-cyan-primary focus:outline-none transition-colors"
-                  placeholder="your@email.com"
+                  placeholder={t('emailPlaceholder')}
                 />
               </div>
 
               {/* Message */}
               <div>
                 <label htmlFor="message" className="text-xs font-mono uppercase tracking-widest text-dark-muted/50">
-                  Message
+                  {t('message')}
                 </label>
                 <textarea
                   id="message"
@@ -180,7 +182,7 @@ export function Contact() {
                   required
                   rows={4}
                   className="w-full mt-2 px-4 py-3 rounded-sm border border-dark-border bg-dark-card/50 text-dark-text placeholder-dark-muted/30 focus:border-cyan-primary focus:outline-none transition-colors resize-none"
-                  placeholder="Your message..."
+                  placeholder={t('messagePlaceholder')}
                 />
               </div>
 
@@ -192,7 +194,7 @@ export function Contact() {
                 disabled={isLoading}
                 className="w-full px-6 py-3 bg-gradient-to-r from-cyan-primary to-cyan-light text-dark-bg font-semibold rounded-sm hover:shadow-lg hover:shadow-cyan-primary/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
               >
-                {isLoading ? 'Sending...' : 'Send Message'}
+                {isLoading ? t('sending') : t('sendButton')}
               </motion.button>
 
               {/* Success Message */}
@@ -203,7 +205,7 @@ export function Contact() {
                   exit={{ opacity: 0, y: -10 }}
                   className="p-3 rounded-sm bg-cyan-primary/10 border border-cyan-primary/50 text-cyan-light text-sm font-medium text-center"
                 >
-                  ✓ Message received! I&apos;ll get back to you soon.
+                  ✓ {t('successMessage')}
                 </motion.div>
               )}
             </motion.form>
@@ -212,7 +214,7 @@ export function Contact() {
           {/* Note */}
           <motion.div variants={itemVariants} className="p-4 rounded-sm bg-dark-card/30 border border-cyan-primary/10 text-center">
             <p className="text-xs sm:text-sm text-dark-muted/70">
-              <span className="font-mono">💡</span> For direct communication, reach out via email or Telegram for faster response.
+              <span className="font-mono">💡</span> {t('note')}
             </p>
           </motion.div>
         </motion.div>

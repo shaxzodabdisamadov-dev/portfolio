@@ -1,9 +1,12 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 import { portfolioData } from '@/app/data/portfolio'
 
 export function ExperienceTimeline() {
+  const t = useTranslations('experience')
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -37,7 +40,7 @@ export function ExperienceTimeline() {
           <motion.div variants={itemVariants} className="space-y-4">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
               <span className="bg-gradient-to-r from-cyan-primary to-violet-primary bg-clip-text text-transparent">
-                Experience
+                {t('title')}
               </span>
             </h2>
             <div className="w-16 h-1 bg-gradient-to-r from-cyan-primary to-cyan-primary/20" />
@@ -73,16 +76,16 @@ export function ExperienceTimeline() {
                     <div>
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                         <h3 className="text-lg sm:text-xl font-semibold text-cyan-light">
-                          {exp.position}
+                          {t('position')}
                         </h3>
                         <span className="text-xs sm:text-sm font-mono text-dark-muted/70">
-                          {exp.period}
+                          {t('period')}
                         </span>
                       </div>
-                      <p className="text-sm text-dark-muted/80 mt-1">{exp.company}</p>
+                      <p className="text-sm text-dark-muted/80 mt-1">{t('company')}</p>
                     </div>
 
-                    <p className="text-sm text-dark-muted/90 leading-relaxed">{exp.description}</p>
+                    <p className="text-sm text-dark-muted/90 leading-relaxed">{t('description')}</p>
 
                     {/* Technologies */}
                     <div className="flex flex-wrap gap-2 pt-2">

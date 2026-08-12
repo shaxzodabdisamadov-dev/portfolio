@@ -1,0 +1,109 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "skills": "Skills",
+    "projects": "Projects",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "hero": {
+    "status": "Status: Operational",
+    "name": "Shaxzod Abdisamadov",
+    "title": "DevOps & IT Infrastructure Specialist",
+    "bio": "Building reliable infrastructure, secure networks, and scalable technical environments.",
+    "viewExperience": "View Experience",
+    "contactMe": "Contact Me",
+    "scrollExplore": "Scroll to explore"
+  },
+  "systemStatus": {
+    "title": "System Status",
+    "infrastructure": "Infrastructure",
+    "network": "Network",
+    "security": "Security",
+    "monitoring": "Monitoring",
+    "containers": "Containers",
+    "systems": "Systems",
+    "operational": "operational",
+    "online": "online",
+    "protected": "protected",
+    "active": "active",
+    "ready": "ready",
+    "stable": "stable",
+    "version": "v1.0"
+  },
+  "about": {
+    "title": "About",
+    "headline": "I am a DevOps and IT Infrastructure specialist with 4+ years of hands-on experience in designing, implementing, and maintaining robust technical environments.",
+    "description": "With a strong foundation in infrastructure management, networking, and server administration, I specialize in:\n\n• Infrastructure planning and deployment\n• Network design and security\n• Server administration (Linux & Windows)\n• Virtualization and containerization\n• Monitoring and system reliability\n• Firewall configuration and network security\n\nMy approach focuses on creating reliable, secure, and scalable systems that support business operations. I have worked across multiple infrastructure technologies and am committed to continuous learning and best practices in DevOps.",
+    "experience": "Years of Experience",
+    "education": "Education",
+    "university": "Tashkent University of Information Technologies",
+    "degree": "Telecommunication Technologies"
+  },
+  "experience": {
+    "title": "Experience",
+    "position": "Advisor to the Head",
+    "company": "Tashkent City Statistics Department",
+    "period": "4+ years",
+    "description": "Infrastructure oversight and technical advisory. Responsible for IT infrastructure decisions, server administration, network management, and system reliability."
+  },
+  "skills": {
+    "title": "Technical Arsenal",
+    "infrastructure": "Infrastructure",
+    "networking": "Networking",
+    "devops": "DevOps",
+    "other": "Other"
+  },
+  "infrastructureDiagram": {
+    "title": "Infrastructure Stack",
+    "user": "User",
+    "network": "Network",
+    "firewall": "Firewall",
+    "server": "Server",
+    "application": "Application",
+    "monitoring": "Monitoring",
+    "description": "This represents a conceptual infrastructure stack demonstrating the flow from end-user through network security, server infrastructure, application layer, to monitoring and observability."
+  },
+  "projects": {
+    "title": "Projects & Operations",
+    "infrastructureProjects": "Infrastructure Projects",
+    "projectDescription": "Selected infrastructure and systems projects will be showcased here. Projects demonstrating infrastructure design, network implementation, and system optimization.",
+    "status": "In Development",
+    "detailsComingSoon": "Details coming soon",
+    "comingSoonTitle": "Projects Coming Soon",
+    "comingSoonDescription": "Detailed infrastructure and systems projects demonstrating infrastructure design, network implementation, and system optimization will be added here."
+  },
+  "education": {
+    "title": "Education",
+    "university": "Tashkent University of Information Technologies",
+    "degree": "Telecommunication Technologies",
+    "fieldOfStudy": "Field of Study",
+    "focusAreas": "Focus Areas"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Have a project in mind or want to collaborate? Reach out and let's create something great together.",
+    "name": "Name",
+    "email": "Email",
+    "telegram": "Telegram",
+    "github": "GitHub",
+    "message": "Message",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "your@email.com",
+    "messagePlaceholder": "Your message...",
+    "sendButton": "Send Message",
+    "sending": "Sending...",
+    "successMessage": "Message received! I'll get back to you soon.",
+    "note": "For direct communication, reach out via email or Telegram for faster response."
+  },
+  "footer": {
+    "brand": "DevOps & IT Infrastructure Specialist",
+    "navigation": "Navigation",
+    "more": "More",
+    "social": "Social",
+    "copyright": "All rights reserved.",
+    "builtWith": "Built with Next.js"
+  }
+}

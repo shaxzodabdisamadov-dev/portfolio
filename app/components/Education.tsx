@@ -1,9 +1,12 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 import { portfolioData } from '@/app/data/portfolio'
 
 export function Education() {
+  const t = useTranslations('education')
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -37,7 +40,7 @@ export function Education() {
           <motion.div variants={itemVariants} className="space-y-4">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
               <span className="bg-gradient-to-r from-cyan-primary to-violet-primary bg-clip-text text-transparent">
-                Education
+                {t('title')}
               </span>
             </h2>
             <div className="w-16 h-1 bg-gradient-to-r from-cyan-primary to-cyan-primary/20" />
@@ -68,7 +71,7 @@ export function Education() {
                 <div className="pt-4 border-t border-dark-border space-y-2">
                   <div>
                     <p className="text-xs font-mono uppercase tracking-wider text-dark-muted/50">
-                      Field of Study
+                      {t('fieldOfStudy')}
                     </p>
                     <p className="text-sm text-dark-text mt-1">
                       {portfolioData.about.education.degree}
@@ -76,7 +79,7 @@ export function Education() {
                   </div>
                   <div className="pt-2">
                     <p className="text-xs font-mono uppercase tracking-wider text-dark-muted/50">
-                      Focus Areas
+                      {t('focusAreas')}
                     </p>
                     <div className="flex flex-wrap gap-2 mt-2">
                       {['Telecommunications', 'Infrastructure', 'Networking'].map((skill) => (

@@ -1,10 +1,17 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useTranslations, useLocale } from 'next-intl'
 import { portfolioData } from '@/app/data/portfolio'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
+  const t = useTranslations('footer')
+  const locale = useLocale()
+
+  const getNavLink = (href: string) => {
+    return `/${locale}${href}`
+  }
 
   return (
     <footer className="border-t border-dark-border bg-dark-card/50 backdrop-blur-sm">
@@ -24,26 +31,26 @@ export function Footer() {
                 SA.
               </div>
               <p className="text-xs sm:text-sm text-dark-muted/70">
-                DevOps & IT Infrastructure Specialist
+                {t('brand')}
               </p>
             </div>
 
             {/* Navigation */}
             <div>
               <p className="text-xs font-mono uppercase tracking-widest text-dark-muted/50 mb-4">
-                Navigation
+                {t('navigation')}
               </p>
               <div className="space-y-2 text-sm text-dark-muted/80">
-                <a href="#home" className="block hover:text-cyan-primary transition-colors">
+                <a href={getNavLink('#home')} className="block hover:text-cyan-primary transition-colors">
                   Home
                 </a>
-                <a href="#about" className="block hover:text-cyan-primary transition-colors">
+                <a href={getNavLink('#about')} className="block hover:text-cyan-primary transition-colors">
                   About
                 </a>
-                <a href="#experience" className="block hover:text-cyan-primary transition-colors">
+                <a href={getNavLink('#experience')} className="block hover:text-cyan-primary transition-colors">
                   Experience
                 </a>
-                <a href="#skills" className="block hover:text-cyan-primary transition-colors">
+                <a href={getNavLink('#skills')} className="block hover:text-cyan-primary transition-colors">
                   Skills
                 </a>
               </div>
@@ -52,16 +59,16 @@ export function Footer() {
             {/* More Links */}
             <div>
               <p className="text-xs font-mono uppercase tracking-widest text-dark-muted/50 mb-4">
-                More
+                {t('more')}
               </p>
               <div className="space-y-2 text-sm text-dark-muted/80">
-                <a href="#projects" className="block hover:text-cyan-primary transition-colors">
+                <a href={getNavLink('#projects')} className="block hover:text-cyan-primary transition-colors">
                   Projects
                 </a>
-                <a href="#education" className="block hover:text-cyan-primary transition-colors">
+                <a href={getNavLink('#education')} className="block hover:text-cyan-primary transition-colors">
                   Education
                 </a>
-                <a href="#contact" className="block hover:text-cyan-primary transition-colors">
+                <a href={getNavLink('#contact')} className="block hover:text-cyan-primary transition-colors">
                   Contact
                 </a>
               </div>
@@ -70,7 +77,7 @@ export function Footer() {
             {/* Social Links */}
             <div>
               <p className="text-xs font-mono uppercase tracking-widest text-dark-muted/50 mb-4">
-                Social
+                {t('social')}
               </p>
               <div className="space-y-2">
                 <a
@@ -105,13 +112,13 @@ export function Footer() {
           {/* Bottom Footer */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-dark-muted/50 font-mono">
             <p>
-              © {currentYear} {portfolioData.personal.name}. All rights reserved.
+              © {currentYear} {portfolioData.personal.name}. {t('copyright')}
             </p>
             <div className="flex items-center gap-4">
               <span>•</span>
               <span>DevOps & Infrastructure</span>
               <span>•</span>
-              <span>Built with Next.js</span>
+              <span>{t('builtWith')}</span>
             </div>
           </div>
         </motion.div>

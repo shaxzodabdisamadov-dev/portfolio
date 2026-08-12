@@ -2,12 +2,20 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { useRouter, usePathname } from 'next/navigation'
+import { useLocale, useTranslations } from 'next-intl'
 import { navigationItems, portfolioData } from '@/app/data/portfolio'
 import { motion } from 'framer-motion'
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const locale = useLocale()
+  const router = useRouter()
+  const pathname = usePathname()
+  const t = useTranslations('nav')
+
+  const locales = ['uz', 'ru', 'en']
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +25,15 @@ export function Navbar() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  const handleLanguageChange = (newLocale: string) => {
+    const pathWithoutLocale = pathname.replace(/^\/(uz|ru|en)/, '')
+    router.push(`/${newLocale}${pathWithoutLocale || ''}`)
+  }
+
+  const getNavLink = (href: string) => {
+    return `/${locale}${href}`
+  }
 
   return (
     <nav
@@ -29,7 +46,7 @@ export function Navbar() {
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <Link href="#home" className="flex items-center gap-2 group">
+          <Link href={`/${locale}`} className="flex items-center gap-2 group">
             <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-cyan-primary to-violet-primary bg-clip-text text-transparent">
               SA.
             </div>
@@ -40,16 +57,35 @@ export function Navbar() {
             {navigationItems.map((item) => (
               <Link
                 key={item.label}
-                href={item.href}
+                href={getNavLink(item.href)}
                 className="text-sm font-medium text-dark-muted hover:text-cyan-primary transition-colors duration-300"
               >
-                {item.label}
+                {t(item.label.toLowerCase().replace(' ', '_'))}
               </Link>
             ))}
           </div>
 
-          {/* GitHub Button + Mobile Menu Toggle */}
-          <div className="flex items-center gap-4">
+          {/* Controls - GitHub + Language Switcher + Mobile Menu */}
+          <div className="flex items-center gap-3 sm:gap-4">
+            {/* Language Switcher */}
+            <div className="flex items-center border border-dark-border rounded-sm overflow-hidden">
+              {locales.map((loc) => (
+                <button
+                  key={loc}
+                  onClick={() => handleLanguageChange(loc)}
+                  className={`px-2 sm:px-3 py-1 text-xs font-mono transition-colors ${
+                    locale === loc
+                      ? 'bg-cyan-primary text-dark-bg'
+                      : 'bg-transparent text-dark-muted hover:text-cyan-primary'
+                  }`}
+                  title={loc === 'uz' ? 'O\'zbekcha' : loc === 'ru' ? 'Русский' : 'English'}
+                >
+                  {loc.toUpperCase()}
+                </button>
+              ))}
+            </div>
+
+            {/* GitHub Button */}
             <a
               href={`https://github.com/${portfolioData.personal.github}`}
               target="_blank"
@@ -95,11 +131,11 @@ export function Navbar() {
             {navigationItems.map((item) => (
               <Link
                 key={item.label}
-                href={item.href}
+                href={getNavLink(item.href)}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="block text-sm font-medium text-dark-muted hover:text-cyan-primary transition-colors duration-300"
               >
-                {item.label}
+                {t(item.label.toLowerCase().replace(' ', '_'))}
               </Link>
             ))}
             <a

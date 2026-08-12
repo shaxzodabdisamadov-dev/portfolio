@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 
 interface SystemStatusItem {
   label: string
@@ -13,6 +14,8 @@ interface SystemStatusProps {
 }
 
 export function SystemStatus({ items }: SystemStatusProps) {
+  const t = useTranslations('systemStatus')
+
   const containerVariants = {
     hidden: { opacity: 0, scale: 0.95 },
     visible: {
@@ -35,6 +38,10 @@ export function SystemStatus({ items }: SystemStatusProps) {
     },
   }
 
+  const getStatusTranslation = (status: string) => {
+    return t(status as any) || status
+  }
+
   return (
     <motion.div
       variants={containerVariants}
@@ -50,7 +57,7 @@ export function SystemStatus({ items }: SystemStatusProps) {
         <motion.div variants={itemVariants} className="flex items-center gap-2">
           <div className="w-3 h-3 rounded-full bg-cyan-primary animate-pulse" />
           <h3 className="text-sm font-mono font-semibold text-cyan-primary uppercase tracking-widest">
-            System Status
+            {t('title')}
           </h3>
         </motion.div>
       </div>
@@ -67,14 +74,14 @@ export function SystemStatus({ items }: SystemStatusProps) {
               <span className="text-lg">{item.icon}</span>
               <div>
                 <p className="text-xs font-mono uppercase tracking-wider text-dark-muted">
-                  {item.label}
+                  {t(item.label.toLowerCase() as any)}
                 </p>
               </div>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-cyan-primary animate-pulse" />
               <span className="text-xs font-mono text-cyan-primary capitalize">
-                {item.status}
+                {getStatusTranslation(item.status)}
               </span>
             </div>
           </motion.div>
@@ -87,7 +94,7 @@ export function SystemStatus({ items }: SystemStatusProps) {
         className="mt-6 pt-6 border-t border-dark-border flex items-center justify-between text-xs font-mono text-dark-muted/50"
       >
         <span>Infrastructure Control Center</span>
-        <span>v1.0</span>
+        <span>{t('version')}</span>
       </motion.div>
     </motion.div>
   )
